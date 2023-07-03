@@ -1,0 +1,149 @@
+div.about {
+    @include w;
+    background: $swh;
+    overflow: hidden;
+    @include respond(mlaptop) {
+        height: 65vh;
+        overflow: hidden;
+    }
+    h2 {
+        @include tcolor;
+        &:hover {
+            @include tcolorh;
+        }
+    }
+    div.abt_main {
+        max-width: 95%;
+        margin: 45px 40px 30px 45px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        @include respond(phone) {
+            margin: 25px 0px 30px 5px;
+        }
+        @include respond(mlaptop) {
+            justify-content: space-between;
+        }
+        div.text {
+            width: 45rem;
+            @include respond(phone) {
+                @include spcenter;
+                justify-content: unset;
+                width: 100%;
+            }
+            @include respond(mlaptop) {
+                @include spcenter;
+                display: block;
+                width: 55%;
+            }
+            h3 {
+                font-size: 26px;
+                line-height: 45px;
+                @include respond(phone) {
+                    font-size: 20px;
+                }
+                @include respond(tab) {
+                    font-size: 22px;
+                }
+            }
+            p {
+                font-size: 21px;
+                @include respond(phone) {
+                    font-size: 13px;
+                }
+                @include respond(phonex) {
+                    font-size: 15px;
+                }
+                @include respond(lphone) {
+                    font-size: 18px;
+                }
+                @include respond(mtab) {
+                    font-size: 18px;
+                }
+                @include respond(mlaptop) {
+                    font-size: 14px;
+                }
+                &:nth-child(3) {
+                    margin-top: 12px;
+                }
+                &:nth-child(4) {
+                    margin-top: 15px;
+                }
+                &:nth-child(5) {
+                    margin-top: 18px;
+                }
+            }
+            a {
+                position: relative;
+                top: 35px;
+                font-size: 20px;
+                @include arrow;
+                margin: 0;
+                &:hover {
+                    @include aline;
+                }
+                @include respond(phone) {
+                    top: 15px;
+                }
+            }
+        }
+        div.abtimage {
+            width: 45rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            @include respond(phone) {
+                width: 100%;
+                justify-content: flex-start;
+                flex-direction: row;
+                padding-top: 40px;
+            }
+            @include respond(mtab) {
+                width: 100%;
+                justify-content: flex-start;
+                flex-direction: row;
+                padding-top: 60px;
+            }
+            @include respond(mlaptop) {
+                width: 40%;
+                justify-content: flex-start;
+                flex-direction: column;
+                padding-top: 0px;
+            }
+            div.img {
+                @include img;
+                position: relative;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+                &:hover {
+                    @include himg;
+                }
+                &_2 {
+                    z-index: 2;
+                    position: relative;
+                    left: 35px;
+                    bottom: 90px;
+                    @include abr;
+                    @include respond(mlaptop) {
+                        left: 35px;
+                        bottom: 90px;
+                    }
+                }
+                &_3 {
+                    z-index: 2;
+                    position: relative;
+                    left: 75px;
+                    bottom: 180px;
+                    @include abr;
+                    @include respond(mlaptop) {
+                        left: 75px;
+                        bottom: 180px;
+                    }
+                }
+            }
+        }
+    }
+}

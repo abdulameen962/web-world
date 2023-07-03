@@ -1,0 +1,15 @@
+{
+    "name": "web_world",
+    "version": "1.0.0",
+    "description": "web world freelancer and ui/ux designer",
+    "main": "index.html",
+    "scripts": {
+        "node:sass": "node-sass resources/css/sass/main.scss resources/css/style.css",
+        "auto:compile": "nodemon -e scss -x \"npm run node:sass\""
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "node-sass": "^6.0.1"
+    }
+}

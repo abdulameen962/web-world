@@ -1,0 +1,239 @@
+div.contact_page {
+    @include w;
+    background: $swh;
+    @include spcenter;
+    justify-content: unset;
+    padding-bottom: 40px;
+    &>h2 {
+        @include tcolor;
+        &:hover {
+            @include tcolorh;
+        }
+    }
+    div.contact {
+        width: 90%;
+        margin-top: 30px;
+        @include pcenter;
+        align-items: unset;
+        justify-content: space-between;
+        @include respond(phone) {
+            margin-top: 10px;
+        }
+        @include respond(mtab) {
+            width: 98%;
+            justify-content: space-evenly;
+        }
+        div.contact_left {
+            width: 550px;
+            height: $he;
+            background: rgba($wh, 0.9);
+            border-radius: 10px;
+            padding: 15px;
+            color: rga($bac, .75);
+            @include respond(phone) {
+                width: 550px;
+                padding-top: 5px;
+                height: auto;
+                padding-bottom: 30px;
+            }
+            @include respond(mphone) {
+                width: 550px;
+                padding-bottom: 30px;
+            }
+            @include respond(mtab) {
+                width: 220px;
+                padding-top: 5px;
+                height: auto;
+                padding-bottom: 30px;
+            }
+            @include respond(ltab) {
+                width: 250px;
+            }
+            @include respond(mlaptop) {
+                width: 35%;
+            }
+            h2 {
+                line-height: 70px;
+                font-size: 26px;
+                @include respond(phone) {
+                    font-size: 13px;
+                    line-height: 50px;
+                }
+                @include respond(mphone) {
+                    font-size: 18px;
+                    line-height: 60px;
+                }
+                @include respond(mtab) {
+                    font-size: 15px;
+                    line-height: 60px;
+                }
+                @include respond(ltab) {
+                    font-size: 16px;
+                }
+                @include respond(mlaptop) {
+                    font-size: 22px;
+                }
+                @include respond(laptopx) {
+                    font-size: 26px;
+                }
+            }
+            div.block {
+                h3 {
+                    font-size: 23px;
+                    line-height: 20px;
+                    @include respond(phone) {
+                        font-size: 14px;
+                        line-height: 15px;
+                    }
+                    @include respond(mphone) {
+                        font-size: 16px;
+                    }
+                    @include respond(mtab) {
+                        font-size: 15px;
+                    }
+                    @include respond(ltab) {
+                        font-size: 16px;
+                        line-height: 15px;
+                    }
+                    @include respond(mlaptop) {
+                        font-size: 18px;
+                        line-height: 15px;
+                    }
+                    @include respond(laptopx) {
+                        font-size: 23px;
+                        line-height: 20px;
+                    }
+                }
+                a {
+                    color: rgba($bac, .6);
+                    line-height: 60px;
+                    font-size: 20px;
+                    @include respond(phone) {
+                        line-height: 30px;
+                        font-size: 12px;
+                    }
+                    @include respond(mphone) {
+                        font-size: 14px;
+                        line-height: 50px;
+                    }
+                    @include respond(mtab) {
+                        font-size: 12px;
+                    }
+                    @include respond(ltab) {
+                        font-size: 13px;
+                    }
+                    @include respond(mlaptop) {
+                        font-size: 15px;
+                    }
+                    @include respond(laptopx) {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+        div.contact_right {
+            width: 750px;
+            height: $he;
+            background: rgba($wh, 0.9);
+            border-radius: 10px;
+            @include respond(phone) {
+                width: 850px;
+                height: auto;
+                margin-top: 15px;
+            }
+            @include respond(mtab) {
+                width: 300px;
+                height: auto;
+            }
+            @include respond(ltab) {
+                width: 400px;
+            }
+            @include respond(mlaptop) {
+                width: 60%;
+            }
+            form {
+                padding: 20px 20px;
+                @include respond(phone) {
+                    padding: 20px 10px;
+                }
+                input,
+                textarea {
+                    display: block;
+                    width: 95%;
+                    background: rgba($swh, .6);
+                    border: none;
+                    outline: none;
+                    font-size: 18px;
+                    padding-left: 15px;
+                    @include respond(phone) {
+                        width: 100%;
+                    }
+                }
+                div.part1 {
+                    display: flex;
+                    flex-wrap: wrap;
+                    div.block {
+                        display: block;
+                        width: 50%;
+                        @include respond(phone) {
+                            width: 100%;
+                            &:nth-child(2) {
+                                margin-top: 20px;
+                            }
+                        }
+                        input {
+                            width: 95%;
+                            @include respond(phone) {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+                label {
+                    font-size: 20px;
+                    color: rgba($bac, .5);
+                    @include respond(phone) {
+                        font-size: 15px;
+                    }
+                    @include respond(mtab) {
+                        font-size: 15px;
+                    }
+                    @include respond(laptop) {
+                        font-size: 18px;
+                    }
+                }
+                input {
+                    height: 5vh;
+                    border-radius: 20px;
+                    @include respond(phone) {
+                        height: 3vh;
+                        font-size: 12px;
+                    }
+                }
+                div.space {
+                    margin-top: $top;
+                }
+                textarea {
+                    border-radius: 10px;
+                    resize: none;
+                    height: 20vh;
+                    @include respond(phone) {
+                        height: 15vh;
+                    }
+                }
+                input[type="submit"] {
+                    width: 30%;
+                    margin-top: 15px;
+                    cursor: pointer;
+                    border-radius: 5px;
+                    @include respond(phone) {
+                        height: auto;
+                        padding: 5px;
+                        width: 50%;
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+}

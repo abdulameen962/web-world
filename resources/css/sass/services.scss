@@ -1,0 +1,131 @@
+div.services {
+    @include w;
+    background: rgba(255, 255, 255, 0.8);
+    @include pcenter;
+    flex-direction: column;
+    padding-bottom: 40px;
+    h2 {
+        @include tcolor;
+        z-index: 1;
+        &:hover {
+            @include tcolorh;
+        }
+    }
+    h4 {
+        font-size: 25px;
+        padding-top: 10px;
+        font-family: rale;
+        color: rgba(0, 0, 0, 0.6);
+        @include respond(phone) {
+            font-size: 13px;
+        }
+        @include respond(phonex) {
+            font-size: 15px;
+        }
+        @include respond(mphone) {
+            font-size: 18px;
+        }
+        @include respond(tab) {
+            font-size: 20px;
+        }
+    }
+    div.service_main {
+        width: 90%;
+        height: auto;
+        @include pcenter;
+        justify-content: space-evenly;
+        margin-top: 20px;
+        div.service_box {
+            width: 25rem;
+            height: auto;
+            @include spcenter;
+            @include respond(phone) {
+                @include w;
+                padding-top: 20px;
+            }
+            @include respond(mtab) {
+                width: 16rem;
+                padding-top: 0;
+            }
+            @include respond(llaptop) {
+                width: 20rem;
+                padding-top: 0;
+            }
+            &_3 {
+                @include respond(mtab) {
+                    padding-top: 20px;
+                }
+            }
+            img {
+                @include mp;
+                width: auto;
+                height: 50%;
+                @include respond(phone) {
+                    width: 60%;
+                }
+                @include respond(mphone) {
+                    width: 40%;
+                    height: 40%;
+                }
+                @include respond(lphone) {
+                    width: auto;
+                }
+                @include respond(tab) {
+                    width: 40%;
+                }
+                @include respond(mtab) {
+                    width: 35%;
+                    height: 35%;
+                }
+                @include respond(llaptop) {
+                    width: 50%;
+                    height: 50%;
+                }
+            }
+            p {
+                width: 100%;
+                font-size: 21px;
+                text-align: center;
+                margin-top: 25px;
+                @include respond(phone) {
+                    font-size: 13px;
+                    margin-top: 10px;
+                }
+                @include respond(phonex) {
+                    font-size: 16px;
+                }
+                @include respond(mphone) {
+                    font-size: 18px;
+                }
+                @include respond(lphone) {
+                    font-size: 20px;
+                }
+                @include respond(tab) {
+                    width: 90%;
+                    font-size: 20px;
+                }
+                @include respond(mtab) {
+                    font-size: 15px;
+                }
+                @include respond(llaptop) {
+                    font-size: 22px;
+                }
+            }
+            a {
+                @include arrow;
+                &:hover {
+                    @include aline;
+                }
+                @include respond(phone) {
+                    margin-top: 5px;
+                }
+                @include respond(mtab) {
+                    font-size: 12px;
+                }
+                @include respond(llaptop) {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}

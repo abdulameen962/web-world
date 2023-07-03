@@ -1,0 +1,349 @@
+* {
+    @include box;
+    font-family: roboto;
+}
+
+body {
+    @include box;
+    overflow-x: hidden;
+}
+
+div.toggle {
+    visibility: hidden;
+    position: sticky;
+    top: 0px;
+    z-index: 2;
+    transition: all 0.6s cubic-bezier(0.76, 0, 0.24, 1);
+    div.toggle_button {
+        background: $swh;
+        width: 50px;
+        visibility: visible;
+        height: 50px;
+        border-radius: 50%;
+        @include pcenter;
+        z-index: 2;
+        position: fixed;
+        right: 10%;
+        cursor: pointer;
+        top: 6%;
+        box-shadow: 0rem 1rem 1.5rem rgba(0, 0, 0, 0.6);
+        transition: all 0.3s;
+        @include respond(phone) {
+            width: 35px;
+            height: 35px;
+        }
+        @include respond(mphone) {
+            width: 45px;
+            height: 45px;
+        }
+        @include respond(mtab) {
+            width: 45px;
+            height: 45px;
+        }
+        @include respond(laptop) {
+            width: 50px;
+            height: 50px;
+        }
+        i {
+            font-size: 28px;
+            color: rgba(0, 0, 0, 0.5);
+            @include respond(phone) {
+                font-size: 20px;
+            }
+            @include respond(tab) {
+                font-size: 24px;
+            }
+            @include respond(mtab) {
+                font-size: 24px;
+            }
+            @include respond(laptop) {
+                font-size: 30px;
+            }
+        }
+        &:hover {
+            box-shadow: 0rem 1rem 3rem rgba(0, 0, 0, 0.6);
+        }
+        &:active {
+            box-shadow: 0rem 1rem 1.5rem rgba(0, 0, 0, 0.6);
+        }
+    }
+    div.toggle_navigation {
+        background: $gblue;
+        border-radius: 50%;
+        position: absolute;
+        top: 4%;
+        left: 0%;
+        max-width: 6rem;
+        max-height: 6rem;
+        @include pcenter;
+        justify-content: unset;
+        transition: all 0.6s;
+        ul {
+            @include mp;
+            width: 100%;
+            height: 100%;
+            li {
+                list-style-type: none;
+                padding: 0px 0px 42px 0px;
+                margin-right: 200px;
+                text-align: center;
+                opacity: 0;
+                transition: all .2s ease-in-out;
+                @include respond(phone) {
+                    padding: 0px 0px 30px 0px;
+                }
+                @include respond(mtab) {
+                    padding: 0px 0px 30px 0px;
+                }
+                a {
+                    color: $wh;
+                    text-decoration: none;
+                    font-size: 40px;
+                    transition: all .2s ease-in-out;
+                    font-family: quicksand;
+                    &:hover {
+                        margin-left: 1.5rem;
+                        color: rgba(255, 255, 255, 0.5);
+                    }
+                    @include respond(phone) {
+                        font-size: 18px;
+                    }
+                    @include respond(tab) {
+                        font-size: 22px;
+                    }
+                    @include respond(mtab) {
+                        font-size: 25px;
+                    }
+                    @include respond(mlaptop) {
+                        font-size: 28px;
+                    }
+                    @include respond(laptopx) {
+                        font-size: 33px;
+                    }
+                }
+            }
+        }
+    }
+    div.toggle_active {
+        border-radius: 0%;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        @include wh;
+        z-index: 1;
+    }
+}
+
+div.images {
+    position: absolute;
+    z-index: -3;
+    max-width: 100vw;
+    max-height: 100vh;
+    div.slide1 {
+        @include slide;
+        @include image("https://res.cloudinary.com/abdulameen/image/upload/v1630378490/211372-web-design-wallpaper_1_kjlhnc.png");
+        animation: slide1 15s infinite;
+    }
+    div.slide2 {
+        @include slide;
+        @include image("https://res.cloudinary.com/abdulameen/image/upload/v1630378485/christopher-gower-m_HRfLhgABo-unsplash_1_clqquz.png");
+        animation: slide2 15s infinite;
+    }
+    div.slide3 {
+        @include slide;
+        @include image("https://res.cloudinary.com/abdulameen/image/upload/v1630378490/christina-wocintechchat-com-6Dv3pe-JnSg-unsplash_1_ziudpj.png");
+        animation: slide3 15s infinite;
+    }
+}
+
+@keyframes slide1 {
+    0% {
+        opacity: 1;
+    }
+    33% {
+        opacity: 0;
+    }
+    99% {
+        opacity: 0;
+    }
+}
+
+@keyframes slide2 {
+    0% {
+        opacity: 0;
+    }
+    33% {
+        opacity: 1;
+    }
+    99% {
+        opacity: 0;
+    }
+}
+
+@keyframes slide3 {
+    0% {
+        opacity: 0;
+    }
+    33% {
+        opacity: 0;
+    }
+    99% {
+        opacity: 1;
+    }
+}
+
+div.main {
+    @include wh;
+    @include spcenter;
+    padding-top: 180px;
+    justify-content: unset;
+    @include respond(phone) {
+        padding-top: 100px;
+    }
+    @include respond(mtab) {
+        padding-top: 100px;
+    }
+    @include respond(laptop) {
+        padding-top: 160px;
+    }
+    div.logo {
+        width: 20vw;
+        height: 20vh;
+        @include image("https://res.cloudinary.com/abdulameen/image/upload/v1630378924/webworld_1_loepzj.png");
+        background-size: contain;
+        @include respond(phone) {
+            width: 45vw;
+            height: 15vh;
+        }
+        @include respond(mtab) {
+            width: 45vw;
+            height: 15vh;
+        }
+    }
+    div.text {
+        color: $wh;
+        width: 100vw;
+        margin-top: 25px;
+        @include spcenter;
+        justify-content: unset;
+        p {
+            font-size: 42px;
+            font-family: redhat;
+            line-height: 65px;
+            @include respond(phone) {
+                text-align: center;
+                font-size: 23px;
+                line-height: 45px;
+            }
+            @include respond(phonex) {
+                font-size: 25px;
+            }
+            @include respond(mphone) {
+                font-size: 30px;
+            }
+            @include respond(mtab) {
+                font-size: 35px;
+                text-align: center;
+                line-height: 50px;
+            }
+        }
+        i {
+            font-family: italian;
+            font-size: 35px;
+            padding-top: 20px;
+            @include respond(phone) {
+                font-size: 22px;
+                padding-top: 10px;
+            }
+            @include respond(phonex) {
+                font-size: 25px;
+                padding-top: 10px;
+            }
+            @include respond(phonex) {
+                font-size: 28px;
+                padding-top: 10px;
+            }
+            @include respond(mtab) {
+                font-size: 30px;
+                padding-top: 10px;
+            }
+            @include respond(mlaptop) {
+                font-size: 35px;
+                padding-top: 20px;
+            }
+        }
+        div.links {
+            margin-top: 5px;
+            width: 28vw;
+            display: flex;
+            justify-content: space-between;
+            @include respond(phone) {
+                @include mp;
+                width: auto;
+            }
+            @include respond(phonex) {
+                width: 90vw;
+            }
+            @include respond(mphone) {
+                width: 80vw;
+            }
+            @include respond(lphone) {
+                width: 70vw;
+            }
+            @include respond(tab) {
+                width: 75vw;
+            }
+            @include respond(mtab) {
+                @include mp;
+                width: 65vw;
+            }
+            @include respond(ltab) {
+                width: 55vw;
+            }
+            @include respond(tabx) {
+                width: 48vw;
+            }
+            @include respond(mlaptop) {
+                width: 45vw;
+            }
+            @include respond(laptop) {
+                width: 37vw;
+            }
+            @include respond(laptopx) {
+                width: 28vw;
+            }
+            a {
+                text-decoration: none;
+                color: white;
+                background: $lblue;
+                padding: 12px 30px 12px 30px;
+                border-radius: 25px;
+                font-size: 22px;
+                word-spacing: 5px;
+                &:hover {
+                    box-shadow: 0rem 1.5rem 2rem rgba($bac, .7);
+                }
+                &:active {
+                    box-shadow: none;
+                }
+                @include respond(phone) {
+                    word-spacing: normal;
+                    font-size: 12px;
+                    padding: 12px 15px 12px 15px;
+                }
+                @include respond(phonex) {
+                    font-size: 14px;
+                }
+                @include respond(tab) {
+                    font-size: 15px;
+                    padding: 13px 25px;
+                }
+                @include respond(mtab) {
+                    word-spacing: normal;
+                    font-size: 18px;
+                    padding: 15px 30px;
+                }
+            }
+        }
+    }
+}

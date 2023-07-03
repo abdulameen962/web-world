@@ -1,0 +1,278 @@
+@mixin mp {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin box {
+    @include mp;
+    box-sizing: border-box;
+}
+
+@mixin wh {
+    @include w;
+    @include h;
+}
+
+@mixin w {
+    min-width: 100vw;
+}
+
+@mixin h {
+    min-height: 100vh;
+}
+
+@mixin img {
+    width: 17vw;
+    transition: all 0.2s ease;
+    height: 22vh;
+    box-shadow: 0rem 0rem 3rem rgba(0, 0, 0, 0.7);
+    @include respond(phone) {
+        width: 32vw;
+        box-shadow: 0rem 0rem 1.5rem rgba(0, 0, 0, 0.2);
+    }
+    @include respond(mtab) {
+        width: 40vw;
+        box-shadow: 0rem 0rem 1.5rem rgba(0, 0, 0, 0.2);
+    }
+    @include respond(mlaptop) {
+        width: 20vw;
+        height: 20vh;
+        box-shadow: 0rem 0rem 3rem rgba(0, 0, 0, 0.7);
+    }
+    @include respond(llaptop) {
+        width: 18vw;
+        height: 22vh;
+    }
+}
+
+@mixin slide {
+    position: absolute;
+    @include wh;
+    opacity: 0;
+}
+
+@mixin tcolor {
+    font-size: 32px;
+    padding-top: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    background: linear-gradient(to right, $lblue, rgba(0, 0, 0, 0.5));
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: all 0.3s ease;
+    font-family: rale;
+    @include respond(phone) {
+        font-size: 18px;
+    }
+    @include respond(phonex) {
+        font-size: 20px;
+    }
+    @include respond(lphone) {
+        font-size: 22px;
+    }
+    @include respond(tab) {
+        font-size: 25px;
+    }
+    @include respond(mtab) {
+        font-size: 26px;
+    }
+    // @include respond(mlaptop) {
+    //     font-size: 15px;
+    // }
+}
+
+@mixin tcolorh {
+    transform: skewX(15deg) skewY(2deg);
+    text-shadow: 0rem 2rem 2rem rgba($bac, 0.6);
+}
+
+@mixin pcenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+@mixin abr {
+    @include respond(phone) {
+        left: 0px;
+        bottom: 0px
+    }
+    @include respond(mtab) {
+        left: 0px;
+        bottom: 0px
+    }
+}
+
+@mixin spcenter {
+    @include pcenter;
+    flex-direction: column;
+}
+
+@mixin himg {
+    outline: 15px solid $lblue;
+    z-index: 3;
+    transform: scale(1.1);
+    outline-offset: 10px;
+}
+
+@mixin aline {
+    color: $wh;
+    background: $lblue;
+    box-shadow: 0rem 0rem 1rem rgba(212, 152, 152, .2);
+    border: none;
+}
+
+@mixin arrow {
+    text-decoration: none;
+    word-spacing: 3px;
+    margin-top: 20px;
+    color: $lblue;
+    padding: 10px 20px 10px 20px;
+    border-bottom: 2px solid $lblue;
+    @include respond(phone) {
+        font-size: 12px;
+    }
+    @include respond(phonex) {
+        font-size: 15px;
+    }
+    @include respond(lphone) {
+        font-size: 18px;
+    }
+    @include respond(mlaptop) {
+        font-size: 14px;
+    }
+}
+
+@mixin image($url) {
+    background-image: url($url);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@mixin footer_side {
+    width: 650px;
+    @include spcenter;
+    justify-content: unset;
+    @include respond(mlaptop) {
+        width: 45%;
+    }
+    hr {
+        width: 100%;
+    }
+    ul {
+        @include mp;
+        margin-top: 30px;
+        @include respond(mtab) {
+            margin-top: 15px;
+        }
+        li {
+            list-style-type: none;
+            display: inline-block;
+            padding-left: 15px;
+            a {
+                color: rgba($bac, .8);
+                text-decoration: none;
+                font-size: 18px;
+                transform: all .3s;
+                @include respond(phone) {
+                    font-size: 12px;
+                }
+                @include respond(mtab) {
+                    font-size: 15px;
+                    line-height: 50px;
+                }
+                @include respond(mlaptop) {
+                    font-size: 14px;
+                    line-height: normal;
+                }
+                img {
+                    width: 25px;
+                    height: 25px;
+                    &:hover {
+                        transform: scale(1.3);
+                    }
+                    @include respond(phone) {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+@mixin respond ($breakpoint) {
+    @if $breakpoint==phone {
+        @media screen and (min-width: 0em) and (max-width: 36em) {
+            @content;
+        }
+    }
+    @if $breakpoint==phonex {
+        @media screen and (min-width: 17.5em) and (max-width: 36em) {
+            @content;
+        }
+    }
+    @if $breakpoint==mphone {
+        @media screen and (min-width: 20em) and (max-width: 36em) {
+            @content;
+        }
+    }
+    @if $breakpoint==lphone {
+        @media screen and (min-width: 23em) and (max-width: 36em) {
+            @content;
+        }
+    }
+    @if $breakpoint==tab {
+        @media screen and (min-width: 26.25em) and (max-width: 36em) {
+            @content;
+        }
+    }
+    @if $breakpoint==mtab {
+        @media screen and (min-width: 36em) and (max-width: 92.5em) {
+            @content;
+        }
+    }
+    @if $breakpoint==ltab {
+        @media screen and (min-width: 43.75em) and (max-width: 92.5em) {
+            @content;
+        }
+    }
+    @if $breakpoint==tabx {
+        @media screen and (min-width: 48em) and (max-width: 92.5em) {
+            @content;
+        }
+    }
+    @if $breakpoint==mlaptop {
+        @media screen and (min-width: 56.25em) and (max-width: 92.5em) {
+            @content;
+        }
+    }
+    @if $breakpoint==laptop {
+        @media screen and (min-width: 64em) and (max-width: 92.5em) {
+            @content;
+        }
+    }
+    @if $breakpoint==llaptop {
+        @media screen and (min-width: 75em) and (max-width: 92.5em) {
+            @content;
+        }
+    }
+    @if $breakpoint==laptopx {
+        @media screen and (min-width: 90em) and (max-width: 92.5em) {
+            @content;
+        }
+    }
+}
+
+$swh: rgba(229, 229, 229, 0.6);
+$wh: white;
+$lblue: rgba(81, 205, 209, 0.8);
+$bac:black;
+$top:20px;
+$gblue: rgba(81, 205, 209, 0.45);
+$he:55vh;

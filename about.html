@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0,maximum-scale=1">
+    <link rel="stylesheet" href="./resources/css/style.css">
+    <link rel="stylesheet" href="./vendors/fontawesome-free-5.15.1-web/css/all.min.css">
+    <link rel="shortcut icon" href="./resources/images/mealvalley.png" type="image/x-icon">
+    <link rel="stylesheet" href="./vendors/aos.css" />
+    <script src="./vendors/vue.js"></script>
+    <title>About Us</title>
+    <script type="text/x-template" id="amaze-food">
+        <div v-for="entry in aElement" class="amazefoods_main" v-bind:style="{right: rightFood}" :id="entry.value" @click="$emit('go')">
+            <img :src="entry.imgLink" :alt="entry.name">
+            <h3>{{ entry.name }}</h3>
+            <p>{{ entry.text }}</p>
+            <p style="visibility:hidden">{{ entry.price }}</p>
+            <p style="visibility:hidden">{{ entry.page }}</p>
+            <button>Order Now</button>
+        </div>
+    </script>
+</head>
+
+<body id="body">
+    <nav data-aos="fade-up" data-aos-duration="1000">
+        <h1>
+            <p class="first">Meal</p>
+            <p class="second">Valley</p>
+        </h1>
+        <ul>
+            <li>
+                <button @mouseover="show" @mouseout="hide">
+                    <i class="fas fa-search" v-if="onlyVisible"></i>
+                    <input placeholder="Search known foods" v-model="mainInput" v-if="searchVisible" v-focus>
+                </button>
+            </li>
+            <li>
+                <a href="#" class="fas fa-cart-plus"></a>
+            </li>
+            <li>
+                <button :class="navClass" @click="nav"></button>
+            </li>
+            <li><a href="#" class="button">Contact now</a></li>
+        </ul>
+        <div class="nav" v-if="navVisible" v-bind:style="{ zIndex: navIndex }">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
+                <li><a href="#main"><i class="fas fa-info-circle"></i>About</a></li>
+                <li><a href="./index.html#contact"><i class="fas fa-phone"></i>Contacts</a></li>
+                <li><a href="./index.html#testimonial"><i class="fas fa-quote-left"></i>Testimonials</a></li>
+                <li><a href="#shop"><i class="fas fa-shopping-bag"></i> Shop</a></li>
+                <li><a href="#team"><i class="fas fa-users"></i>Our Team</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="main" data-aos="fade-up" data-aos-duration="1000" v-bind:style="{ opacity:opacity }" id="main">
+        <div class="left">
+            <h2>FOOD MADE BY THE BEST FOR THE BEST</h2>
+            <p>Meal Valley is a world leading restaurant in food production all over the world, it has been in existence from 1989. A 5 star restaurant located in over 50 countries in the world</p>
+            <H4>OUR MISSION:</H4>
+            <P>IS TO SERVE QUALITY,HEALTHY AND NUTRITOUS FOOD IN THE BEST ENVIRONMENTS AND GOOD CUSTOMER SERVICE</P>
+        </div>
+        <div class="right">
+            <img src="./resources/images/abtmain.png" alt="abtmain">
+        </div>
+    </div>
+    <div class="team" data-aos="zoom-in-up" data-aos-duration="1000" id="team">
+        <h2>MEET OUR TEAM</h2>
+        <p>At the central of our vast organisation, we have our 6 core members, been</p>
+        <p>together for over 30yrs running Foodie</p>
+        <div class="team_main">
+            <team-main :teams="team" :teamright="teamright"></team-main>
+        </div>
+        <div class="controls">
+            <div> <button class="fas fa-arrow-left" @click="left"></button></div>
+            <div> <button class="fas fa-arrow-right" @click="right"></button></div>
+        </div>
+    </div>
+    <div class="curve1"></div>
+    <div class="amazingfoods" data-aos="zoom-in-up" data-aos-duration="1000" id="shop">
+        <h2>Our amazing foods</h2>
+        <div class="foodflex">
+            <p>We give you our 5 star menu made from the best of chefs in the world</p>
+            <div class="select" v-bind:style="{zIndex: selectIndex}">
+                <i :class="selectClass" @click="foodshow"></i>
+                <ul v-if="foodvisible">
+                    <li @click="one">Italian</li>
+                    <li @click="two">German</li>
+                    <li @click="three">Nigerian</li>
+                    <li @click="four">British</li>
+                    <li @click="five">Tanzanian</li>
+                </ul>
+            </div>
+        </div>
+        <div class="amazefoods" v-bind:style="{zIndex: index}">
+            <amaze-food :columns="amazeColumns" :filter-Key="mainInput" :entries="amazeSet" :right-Food="rightFood" :number="id" @go="productLink"></amaze-food>
+        </div>
+    </div>
+    <remainder-part></remainder-part>
+    <script src="./resources/js/script.js"></script>
+    <script src="./resources/js/aboutclick.js"></script>
+    <script src="./vendors/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

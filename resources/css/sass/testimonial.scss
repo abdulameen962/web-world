@@ -1,0 +1,239 @@
+div.testimonial {
+    @include w;
+    height: 80vh;
+    video {
+        width: 100vw;
+        height: 80vh;
+        position: absolute;
+        z-index: -3;
+        opacity: 0.5;
+        object-fit: cover;
+        overflow: hidden;
+    }
+    div.test_main {
+        width: 100%;
+        height: 80vh;
+        background: rgba($lblue, 0.30);
+        h2 {
+            @include tcolor;
+            padding-top: 30px;
+            &:hover {
+                @include tcolorh;
+            }
+        }
+        div.test {
+            width: 40rem;
+            height: 35vh;
+            background: rgba($wh, .5);
+            box-shadow: 0rem 3rem 6rem rgba($bac, .1);
+            border-radius: 10px;
+            overflow: hidden;
+            display: block;
+            @include respond(phone) {
+                width: 13rem;
+                height: 30vh;
+            }
+            @include respond(phonex) {
+                width: 17rem;
+            }
+            @include respond(mphone) {
+                width: 20rem;
+            }
+            @include respond(lphone) {
+                width: 22rem;
+            }
+            @include respond(mtab) {
+                width: 26rem;
+                height: 32vh;
+            }
+            @include respond(mlaptop) {
+                width: 50%;
+                height: 32vh;
+            }
+            @include respond(laptopx) {
+                width: 45%;
+                height: 40vh;
+            }
+            &:nth-child(2) {
+                position: absolute;
+                left: 3%;
+                transform: translateY(30%);
+                @include respond(phone) {
+                    transform: translateY(15%);
+                    left: 2%;
+                }
+                @include respond(phonex) {
+                    left: 1%;
+                }
+                @include respond(lphone) {
+                    transform: translateY(5%);
+                    left: 1%;
+                }
+                @include respond(mtab) {
+                    transform: translateY(5%);
+                }
+            }
+            &:nth-child(3) {
+                position: absolute;
+                right: 7%;
+                transform: translateY(80%);
+                @include respond(phone) {
+                    transform: translateY(120%);
+                    right: 2%;
+                }
+                @include respond(phonex) {
+                    transform: translateY(120%);
+                    right: 0%;
+                    left: 1%;
+                }
+                @include respond(phonex) {
+                    transform: translateY(110%);
+                    right: 0%;
+                    left: 1%;
+                }
+                @include respond(tab) {
+                    transform: translateY(110%);
+                    left: 15%;
+                }
+                @include respond(mtab) {
+                    transform: translateY(110%);
+                    right: 3%;
+                }
+                @include respond(mlaptop) {
+                    transform: translateY(110%);
+                    right: 3%;
+                }
+                @include respond(laptop) {
+                    transform: translateY(110%);
+                    right: 2%;
+                }
+                @include respond(laptopx) {
+                    transform: translateY(70%);
+                    right: 2%;
+                }
+            }
+            div.img {
+                width: 40%;
+                height: 80%;
+                clip-path: circle(90% at 3% 8%);
+                -webkit-clip-path: circle(90% at 3% 8%);
+                -webkit-shape-outside: circle(100% at 3% 8%);
+                shape-outside: circle(100% at 3% 8%);
+                float: left;
+                @include pcenter;
+                overflow: hidden;
+                @include respond(phone) {
+                    clip-path: circle(80% at 3% 8%);
+                    -webkit-clip-path: circle(80% at 3% 8%);
+                }
+                @include respond(mphone) {
+                    clip-path: circle(90% at 3% 8%);
+                    -webkit-clip-path: circle(90% at 3% 8%);
+                }
+                .testimonial_image {
+                    position: absolute;
+                    width: 40%;
+                    height: 100%;
+                    transform: scale(1);
+                    transition: all .3s;
+                }
+                .testimonial_text {
+                    z-index: 1;
+                    transition: all .3s;
+                    font-size: 30px;
+                    color: $wh;
+                    opacity: 0;
+                    transform: scale(0.1);
+                    @include respond(phone) {
+                        font-size: 12px;
+                    }
+                    @include respond(tab) {
+                        font-size: 20px;
+                    }
+                    @include respond(mtab) {
+                        font-size: 25px;
+                    }
+                    @include respond(laptopx) {
+                        font-size: 30px;
+                    }
+                }
+                &:hover .testimonial_image {
+                    transform: scale(1.3);
+                    filter: blur(3px);
+                }
+                &:hover .testimonial_text {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+            }
+            div.text {
+                padding-top: 50px;
+                font-family: quicksand;
+                width: 98%;
+                @include respond(phone) {
+                    padding-top: 20px;
+                }
+                @include respond(mtab) {
+                    padding-top: 20px;
+                }
+                @include respond(mlaptop) {
+                    padding-top: 40px;
+                }
+                h3 {
+                    font-size: 26px;
+                    line-height: 50px;
+                    @include respond(phone) {
+                        font-size: 12px;
+                        line-height: 35px;
+                        padding-left: 100px;
+                    }
+                    @include respond(phonex) {
+                        font-size: 14px;
+                        padding: 0;
+                    }
+                    @include respond(lphone) {
+                        font-size: 16px;
+                    }
+                    @include respond(mtab) {
+                        font-size: 22px;
+                        line-height: 40px;
+                    }
+                    @include respond(laptop) {
+                        font-size: 25px;
+                        line-height: 40px;
+                    }
+                    @include respond(laptopx) {
+                        font-size: 26px;
+                        line-height: 50px;
+                    }
+                }
+                p {
+                    font-size: 18px;
+                    line-height: 30px;
+                    @include respond(phone) {
+                        font-size: 10px;
+                        line-height: 15px;
+                    }
+                    @include respond(phonex) {
+                        font-size: 12px;
+                    }
+                    @include respond(lphone) {
+                        line-height: 20px;
+                    }
+                    @include respond(mtab) {
+                        font-size: 15px;
+                        line-height: 20px;
+                    }
+                    @include respond(laptop) {
+                        font-size: 16px;
+                        line-height: 25px;
+                    }
+                    @include respond(laptop) {
+                        font-size: 18px;
+                        line-height: 30px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,89 @@
+footer {
+    @include w;
+    @include spcenter;
+    overflow: hidden;
+    padding-bottom: 30px;
+    @include respond(mtab) {
+        padding-top: 30px;
+    }
+    div.logo {
+        width: 10%;
+        height: 20vh;
+        @include image("https://res.cloudinary.com/abdulameen/image/upload/v1630378892/web_world_fb7vaf.png");
+        background-size: 100%;
+        @include respond(phone) {
+            width: 40%;
+            height: 25vh;
+        }
+        @include respond(lphone) {
+            width: 30%;
+            height: 20vh;
+        }
+        @include respond(mtab) {
+            width: 20%;
+            height: 15vh;
+        }
+        @include respond(mtab) {
+            height: 18vh;
+        }
+        @include respond(mlaptop) {
+            width: 15%;
+            height: 15vh;
+        }
+        @include respond(laptop) {
+            width: 10%;
+            height: 10vh;
+        }
+        @include respond(laptopx) {
+            width: 10%;
+            height: 20vh;
+        }
+    }
+    div.footer {
+        width: 90%;
+        margin-top: 20px;
+        @include pcenter;
+        justify-content: space-between;
+        @include respond(mlaptop) {
+            width: 95%;
+        }
+        &_left {
+            @include footer_side;
+        }
+        &_right {
+            @include footer_side;
+            @include respond(phone) {
+                margin-top: 20px;
+            }
+            @include respond(mlaptop) {
+                margin-top: 0px;
+                @include mp;
+            }
+        }
+    }
+}
+
+@font-face {
+    font-family: roboto;
+    src: url("../css/Roboto-Light.ttf");
+}
+
+@font-face {
+    font-family: redhat;
+    src: url("../css/RedHatText-Regular.ttf");
+}
+
+@font-face {
+    font-family: italian;
+    src: url("../css/Italianno-Regular.ttf");
+}
+
+@font-face {
+    font-family: rale;
+    src: url("../css/Raleway-Regular.ttf");
+}
+
+@font-face {
+    font-family: quicksand;
+    src: url("../css/Quicksand-Light.ttf");
+}
